@@ -1,0 +1,29 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Friend Finder App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kknosala/FriendFinder.git"
+  },
+  "keywords": [
+    "firend",
+    "find",
+    "matchmake"
+  ],
+  "author": "Kurt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kknosala/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/kknosala/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
