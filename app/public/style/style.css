@@ -1,33 +1,6 @@
-.main-container {
-    display: grid;
-    grid-template-columns: 80px auto 80px;
-    grid-template-rows: 150px auto auto;
-    grid-row-gap: 10px;
-    grid-template-areas: 
-        'header header header'
-        '. main .'
-        '. . .';
-}
-
-.header {
-    grid-area: header;
-    border: 2px solid black;
-}
-
 .main {
-    grid-area: main;
     border: 2px solid black;
-    padding: 10px;
-}
-
-#home-button {
-    background-color: green;
-    color: white;
-    border: 2px solid lightgreen;
-    padding: 15px 32px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    padding: 20px;
 }
 
 #small-text {
