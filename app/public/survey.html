@@ -54,14 +54,20 @@
                 friend!
               </h5>
               <form>
-                    <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ex. John Smith" required>
-                          </div>
-                          <div class="form-group">
-                                <label for="photo">Your Picture</label>
-                                <input type="text" class="form-control" id="photo" required>
-                              </div>
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Ex. John Smith"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="photo">Your Picture</label>
+                  <input type="text" class="form-control" id="photo" required />
+                </div>
 
                 <div class="form-group">
                   <label for="q1">Question 1</label>
@@ -163,7 +169,13 @@
                     <option>5</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-primary" id="survey-submit">Find my Friend!</button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="survey-submit"
+                >
+                  Find my Friend!
+                </button>
               </form>
             </div>
           </div>
@@ -172,11 +184,22 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-                
-    
-    
+      $(document).ready(function() {
+        
+        $('#survey-submit').on('click', function(event) {
+            event.preventDefault();
+
+            var newUser = {
+                name: $('#name').val().trim(),
+                photo: $('#photo').val().trim(),
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
+            }
+
+            console.log(newUser);
         })
+
+
+      });
     </script>
   </body>
 </html>
