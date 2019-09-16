@@ -33,6 +33,44 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <style>
+
+      body {
+        background-color: #222629;
+        color: #ddd;
+      }
+      h1, h2, h3, h4, h5 {
+        color: #86c232;
+      }
+
+      hr {
+        border-color: #61892f;
+      }
+
+      .card {
+        background-color: #474b4f;
+        border-color: #61892f;
+      }
+
+      .card-header {
+        color: #86c232;
+      }
+      
+      .form-control {
+        width: 50%;
+      }
+
+      .btn-primary {
+        background-color: #61892f;
+        border-color: #86c232;
+        color: #ddd;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:active {
+        background-color: #86c232;
+        border-color: #61892f;
+        color: #eee;
+      }
     .friend-modal-display {
     display: none;
     position: fixed;
@@ -44,7 +82,7 @@
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(34, 38, 41, 0.9);
   }
   
   .active-modal {
@@ -67,7 +105,7 @@
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: #86c232;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
@@ -75,7 +113,7 @@
   
   .close:hover,
   .close:focus {
-    color: #bbb;
+    color: #61892f;
     text-decoration: none;
     cursor: pointer;
   }
@@ -85,14 +123,14 @@
   </head>
   <body>
     <div class="container text-center">
-      <div class="header">
+      <div class="header mt-4">
         <h1>Friend Finder App</h1>
       </div>
       <div class="row mt-4 mb-4 text-left">
         <div class="col">
           <div class="card">
             <div class="card-header">
-              The Super Accurate* Friend Finder Survey!
+              <h4>The Super Accurate* Friend Finder Survey!</h2>
             </div>
             <div class="card-body">
               <h5 class="card-title">
