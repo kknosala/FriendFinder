@@ -12,9 +12,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- General CSS Link -->
-    <link rel="stylesheet" href="style/style.css" />
-
     <!-- Bootstrap Javascript -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -35,6 +32,55 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+    <style>
+    .friend-modal-display {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .active-modal {
+    display: block;
+  }
+  
+  .modal-title {
+      margin: auto;
+      text-align: center;
+      color: white;
+  }
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 400px;
+    max-width: 700px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    </style>
+
     <title>Friend Finder Survey</title>
   </head>
   <body>
@@ -52,6 +98,7 @@
               <h5 class="card-title">
                 Your Information
               </h5>
+              <hr>
               <form>
                 <div class="form-group">
                   <label for="name">Your Name</label>
@@ -68,11 +115,17 @@
                   <label for="photo">Your Picture</label>
                   <input type="text" class="form-control" id="photo" required />
                 </div>
-                <h5 class="card-title">Answer the questions below to get matched with your perfect
-                        friend!</h5>
-                        <p>Rate how much you agree with the statement with 1 being completely disagree and 5 being completely agree.</p>
+                <h5 class="card-title">
+                  Answer the questions below to get matched with your perfect
+                  friend!
+                </h5>
+                <p>
+                  Rate how much you agree with the statement with 1 being
+                  completely disagree and 5 being completely agree.
+                </p>
+                <hr>
                 <div class="form-group">
-                  <label for="q1">Question 1</label>
+                  <label for="q1">You enjoy vibrant social events with lots of people.</label>
                   <select class="form-control" id="q1" required>
                     <option>1</option>
                     <option>2</option>
@@ -82,7 +135,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q2">Question 2</label>
+                  <label for="q2">You often spend time exploring unrealistic yet intriguing ideas.</label>
                   <select class="form-control" id="q2" required>
                     <option>1</option>
                     <option>2</option>
@@ -92,7 +145,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q3">Question 3</label>
+                  <label for="q3">Your travel plans are more likely to look like a rough list of ideas than a detailed itinerary.</label>
                   <select class="form-control" id="q3" required>
                     <option>1</option>
                     <option>2</option>
@@ -102,7 +155,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q4">Question 4</label>
+                  <label for="q4">You often think about what you should have said in a conversation long after it has taken place.</label>
                   <select class="form-control" id="q4" required>
                     <option>1</option>
                     <option>2</option>
@@ -112,7 +165,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q5">Question 5</label>
+                  <label for="q5">If your friend is sad about something, your first instinct is to support them emotionally, not try to solve their problem.</label>
                   <select class="form-control" id="q5" required>
                     <option>1</option>
                     <option>2</option>
@@ -122,7 +175,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q6">Question 6</label>
+                  <label for="q6">People can rarely upset you.</label>
                   <select class="form-control" id="q6" required>
                     <option>1</option>
                     <option>2</option>
@@ -132,7 +185,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q7">Question 7</label>
+                  <label for="q7">You have a careful and methodical approach to life.</label>
                   <select class="form-control" id="q7" required>
                     <option>1</option>
                     <option>2</option>
@@ -142,7 +195,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q8">Question 8</label>
+                  <label for="q8">You are still bothered by the mistakes you made a long time ago.</label>
                   <select class="form-control" id="q8" required>
                     <option>1</option>
                     <option>2</option>
@@ -152,7 +205,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q9">Question 9</label>
+                  <label for="q9">At parties and similar events you can mostly be found farther away from the action.</label>
                   <select class="form-control" id="q9" required>
                     <option>1</option>
                     <option>2</option>
@@ -162,7 +215,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="q10">Question 10</label>
+                  <label for="q10">You often find it difficult to relate to people who let their emotions guide them.</label>
                   <select class="form-control" id="q10" required>
                     <option>1</option>
                     <option>2</option>
@@ -185,27 +238,67 @@
         </div>
       </div>
     </div>
+    <div class="friend-modal-display">
+            <span class="close">×</span>
+            <div class="modal-title">
+                <h2>Your new best friend is: <span id='friend-name'></span>!</h2>
+            </div>
+            <br>
+            <img class="modal-content" id="modal-image" />
+        </div>
 
     <script>
-      $(document).ready(function() {
+        $("#survey-submit").on("click", function(event) {
+          event.preventDefault();
 
-        $('#survey-submit').on('click', function(event) {
-            event.preventDefault();
+          var newUser = {
+            name: $("#name")
+              .val()
+              .trim(),
+            photo: $("#photo")
+              .val()
+              .trim(),
+            scores: [
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
+            ]
+          };
 
-            var newUser = {
-                name: $('#name').val().trim(),
-                photo: $('#photo').val().trim(),
-                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
-            }
-                
-                $.post('/api/friends', newUser, function(data){
-                    console.log(data);
-                });
-   
+          $.post("/api/friends", newUser, function(data) {
+            console.log(data);
+            console.log(data.name);
+            $('#name').val('');
+            $('#photo').val('');
+            $("#q1").val(1);
+              $("#q2").val(1);
+              $("#q3").val(1);
+              $("#q4").val(1);
+              $("#q5").val(1);
+              $("#q6").val(1);
+              $("#q7").val(1);
+              $("#q8").val(1);
+              $("#q9").val(1);
+              $("#q10").val(1);
+
+              $(".friend-modal-display").addClass("active-modal");
+              $('#friend-name').text(data.name);
+              $('#modal-image').attr('src', data.photo)
+
+          });
+
         });
 
-
-      });
+        $(".close").click(function() {
+            $(".friend-modal-display").removeClass("active-modal");
+        });
     </script>
   </body>
 </html>
