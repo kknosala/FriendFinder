@@ -284,50 +284,52 @@
     <script>
         $("#survey-submit").on("click", function(event) {
           event.preventDefault();
+          if($("#name").val().trim() === '' || $("#photo").val().trim() === '') {
+            alert('Please enter a name and/or a photograph to continue')
+          }else {
+            var newUser = {
+              name: $("#name")
+                .val()
+                .trim(),
+              photo: $("#photo")
+                .val()
+                .trim(),
+              scores: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
+              ]
+            };
 
-          var newUser = {
-            name: $("#name")
-              .val()
-              .trim(),
-            photo: $("#photo")
-              .val()
-              .trim(),
-            scores: [
-              $("#q1").val(),
-              $("#q2").val(),
-              $("#q3").val(),
-              $("#q4").val(),
-              $("#q5").val(),
-              $("#q6").val(),
-              $("#q7").val(),
-              $("#q8").val(),
-              $("#q9").val(),
-              $("#q10").val()
-            ]
-          };
+            $.post("/api/friends", newUser, function(data) {
+              console.log(data);
+              console.log(data.name);
+              $('#name').val('');
+              $('#photo').val('');
+              $("#q1").val(1);
+                $("#q2").val(1);
+                $("#q3").val(1);
+                $("#q4").val(1);
+                $("#q5").val(1);
+                $("#q6").val(1);
+                $("#q7").val(1);
+                $("#q8").val(1);
+                $("#q9").val(1);
+                $("#q10").val(1);
 
-          $.post("/api/friends", newUser, function(data) {
-            console.log(data);
-            console.log(data.name);
-            $('#name').val('');
-            $('#photo').val('');
-            $("#q1").val(1);
-              $("#q2").val(1);
-              $("#q3").val(1);
-              $("#q4").val(1);
-              $("#q5").val(1);
-              $("#q6").val(1);
-              $("#q7").val(1);
-              $("#q8").val(1);
-              $("#q9").val(1);
-              $("#q10").val(1);
+                $(".friend-modal-display").addClass("active-modal");
+                $('#friend-name').text(data.name);
+                $('#modal-image').attr('src', data.photo)
 
-              $(".friend-modal-display").addClass("active-modal");
-              $('#friend-name').text(data.name);
-              $('#modal-image').attr('src', data.photo)
-
-          });
-
+            });
+          }
         });
 
         $(".close").click(function() {

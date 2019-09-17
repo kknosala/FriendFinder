@@ -16,8 +16,8 @@ var friendArry = [
       ]
   },
   {
-  "name":"Ahmed",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Abed",
+  "photo":"https://imgix.ranker.com/user_node_img/50070/1001393120/original/abed-knows-he_s-being-filmed-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces",
   "scores":[
       5,
       1,
