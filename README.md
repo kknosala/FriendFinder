@@ -18,6 +18,7 @@ This information will be put into the database after the survey is submitted and
 
 ### Friend Finder Survey
 The survey section is where the user will need to answer a few questions about themselves to gather the data necessary to match them with another person. These questions are similar to questions asked during typical personality tests and the user will rank their agreement with the statement with 1 being completely disagree to 5 being completely agree.
+
 Once the questions are answered, the user simply has to submit by clicking on the "Find My Friend" button. After submitting, a modal will appear with their match's name and profile picture.
 
 ## How It All Works
