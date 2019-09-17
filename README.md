@@ -56,4 +56,5 @@ var minDiff = 1000;
 
 ## Future Expansion
 This app would work better with a larger seed of data to allow for more possible results. This will likely occur naturally as more people use it.
+
 A user login and profile would be key to expansion. This would allow users to link together and allow the site to become a full social platform. This would also be a way for existing users to see any current matches. Including some sort of messaging program would be key.
